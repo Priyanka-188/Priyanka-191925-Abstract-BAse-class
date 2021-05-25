@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Shape
+{
+protected:
+    int sides;
+
+public:
+    void getSides(int s)
+    {
+        sides = s;
+    }
+    virtual int numberOfSides() = 0; //pure virtual function
+};
+
+class Trapezoid : public Shape
+{
+public:
+    int numberOfSides()
+    {
+        return sides;
+    }
+};
+class Triangle : public Shape
+{
+public:
+    int numberOfSides()
+    {
+        return sides;
+    }
+};
+
+class Hexagon : public Shape
+{
+public:
+    int numberOfSides()
+    {
+        return sides;
+    }
+};
+
+int main()
+{
+    Trapezoid trap;
+    Triangle tri;
+    Hexagon hex;
+    trap.getSides(4);
+    cout << "Number of sides in trapezoid:" << trap.numberOfSides() << endl;
+    tri.getSides(3);
+    cout << "Number of sides in triangle:" << tri.numberOfSides() << endl;
+    hex.getSides(6);
+    cout << "Number of sides in hexagon:" << hex.numberOfSides() << endl;
+    return 0;
+}
